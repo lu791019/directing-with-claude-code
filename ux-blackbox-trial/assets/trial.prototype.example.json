@@ -1,0 +1,32 @@
+{
+  "title": "外部串接管理畫面雛形",
+  "trial_id": "P1",
+  "target": "prototype",
+  "prototype_source": "D:/cases/demo/雛形/proto_demo.html",
+  "root": "D:/ux-trials/demo-proto",
+  "start_url": "http://127.0.0.1:6400/proto.html",
+  "login_note": "這是本機雛形，不需要登入。",
+  "browser": "Claude in Chrome（mcp__claude-in-chrome__*）",
+  "background": "你是公司的系統管理者，負責管理系統與外部服務之間的串接。",
+  "tasks": [
+    "有一條串接最近好像出了問題。找出是哪一條，以及問題的原因。",
+    "公司新買了一套外部服務，要接進系統。幫它建立設定，整理出哪些資料一定要填。",
+    "你想換一個版本，改到一半決定不換了。放棄這次修改，確認一切回到原狀。"
+  ],
+  "testers": [
+    { "id": "L1", "facet": "ux", "model": "Opus", "effort": "low" }
+  ],
+  "whitebox": {
+    "id": "W1",
+    "model": "Opus",
+    "effort": "medium",
+    "repo_path": "D:/cases/demo",
+    "revision": "未驗證",
+    "files": ["雛形/proto_demo_body.html", "pm/demo.feature", "pm/grill-demo.md"],
+    "standards": [
+      "pm/demo.feature：逐條 Scenario 的 Then",
+      "pm/grill-demo.md 的已拍板內容",
+      "狀態值域一致性：下拉選項與欄位實際出現的值要能對應"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "title": "訂單匯出功能",
+  "trial_id": "R1",
+  "root": "D:/ux-trials/order-export",
+  "start_url": "https://localhost:5001/orders",
+  "login_note": "瀏覽器已由使用者登入好，你不需要登入。畫面落在登入頁就停下，在對話回報。",
+  "browser": "Claude in Chrome（mcp__claude-in-chrome__*）",
+  "background": "你負責每週把訂單資料整理給會計。",
+  "tasks": [
+    "把上週的訂單匯出成檔案。",
+    "這次只要台北門市的訂單，再匯出一次，確認內容只有台北。",
+    "設定成每週自動寄給會計，設到一半改變主意，放棄這次設定，確認沒有留下。"
+  ],
+  "mistakes": [
+    "日期起訖顛倒後匯出。",
+    "匯出時連按多次。",
+    "條件全部清空後匯出。",
+    "輸入超過一年的日期範圍。",
+    "匯出中直接離開頁面。"
+  ],
+  "dont_click": ["首頁（會觸發背景作業，同瀏覽器的導航會卡住）"],
+  "native_dialog_actions": ["刪除排程"],
+  "not_issues": ["畫面右上角通知與本次無關，不用探索。"],
+  "known_issues": ["匯出檔的欄位順序與畫面不同。"],
+  "authorized_writes": "可以在自己的測試資料建立與修改匯出設定。不准寄出信件。",
+  "testers": [
+    { "id": "L1", "facet": "ux", "model": "Opus", "effort": "low", "sandbox": "AIBB-L1" },
+    { "id": "L2", "facet": "ux", "model": "Sonnet", "effort": "medium", "sandbox": "AIBB-L2" },
+    { "id": "L3", "facet": "ui", "model": "Opus", "effort": "low", "sandbox": "AIBB-L3" }
+  ],
+  "whitebox": {
+    "id": "W1",
+    "model": "Opus",
+    "effort": "medium",
+    "repo_path": "D:/repos/shop",
+    "revision": "abc1234",
+    "files": ["src/views/OrderExport.vue", "src/styles/order.css"],
+    "standards": ["docs/design-system.md 的色票與按鈕規範", "設計稿：<網址或檔案>"],
+    "out_of_scope": "手機寬不在本輪範圍。"
+  },
+  "allowed_urls": ["https://localhost:5001/orders"]
+}
